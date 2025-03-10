@@ -20,7 +20,7 @@ class Triangle {
     #isValidNumber(num) {
         if (!(typeof num === "number")) {
             return false;
-        } else if (!num > 0) { 
+        } else if (!(num > 0)) { 
             return false;
         } else if (Number.isNaN(num)) {
             return false;
