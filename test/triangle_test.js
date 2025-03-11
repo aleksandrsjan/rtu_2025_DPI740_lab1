@@ -507,5 +507,25 @@ describe('Test Triangle class', () => {
             assert.strictEqual(result, false)
         });
     });
+
+    describe('Triangle isIsosceles methoded', () => {
+        it('Should return false if Triangle side lengths are equal', () => {
+            const T = new Triangle(10,10,10);
+            const result = T.isIsosceles();
+            assert.strictEqual(result, false)
+        });
+
+        it('Should return true if only two Triangle side lengths are equal', () => {
+            const T = new Triangle(10,10,5);
+            const result = T.isIsosceles();
+            assert.strictEqual(result, true)
+        });
+
+        it('Should return false if Triangle side lengths are different', () => {
+            const T = new Triangle(1,10,5);
+            const result = T.isIsosceles();
+            assert.strictEqual(result, false)
+        });
+    });
 });
 
