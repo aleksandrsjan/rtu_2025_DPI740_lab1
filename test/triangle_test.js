@@ -3,7 +3,7 @@
 const assert = require('assert');
 const Triangle = require("../src/triangle");
 
-describe('Test Triangle clas', () => {
+describe('Test Triangle class', () => {
     describe('Triangle constructor method', () => {
         it('Should create triangle with the 0 side legths if the given negative values', () => {
             const T = new Triangle(-5,-7,-10);
@@ -260,6 +260,50 @@ describe('Test Triangle clas', () => {
             assert.strictEqual(T.x, 5);
             assert.strictEqual(T.y, 7);
             assert.strictEqual(T.z, 10);
+        });
+    });
+
+    describe('Triangle getPerimeter method', () => {
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle(1,3,5);
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 9);
+        });
+
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle(10,30,50);
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 90);
+        });
+
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle(1,79,20);
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 100);
+        });
+
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle(100,30,50);
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 180);
+        });
+
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle(1,3,500);
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 504);
+        });
+        
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle(1000,3000,5000);
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 9000);
+        });
+
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle(1,1,1);
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 3);
         });
     });
 });
