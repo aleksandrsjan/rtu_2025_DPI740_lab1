@@ -124,5 +124,143 @@ describe('Test Triangle clas', () => {
             assert.strictEqual(T.z, 0);
         });
     });
+    
+    describe('Triangle updateSize method', () => {
+        it('Should increase Triangle side lengths by given values if given positive values', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(1,1,1);
+            assert.strictEqual(T.x, 6);
+            assert.strictEqual(T.y, 8);
+            assert.strictEqual(T.z, 11);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given negative values', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(-1,-1,-1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given x value < 0', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(-1,1,1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given y value < 0', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(1,-1,1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given z value < 0', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(1,1,-1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given values = 0', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(0,0,0);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given x value = 0', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(0,1,1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given y value = 0', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(1,0,1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given z value = 0', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(1,1,0);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given values are NaN', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(NaN,NaN,NaN);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given x value is NaN', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(NaN,1,1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given y value is NaN', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(1,NaN,1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given z value is NaN', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(1,1,NaN);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given values are not a number type', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize("1","1","1");
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given x value are not a number type', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize("1",1,1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given y value are not a number type', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(1,"1",1);
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+
+        it('Should not increase Triangle side lengths by given values if given z value are not a number type', () => {
+            const T = new Triangle(5,7,10);
+            T.updateSize(1,1,"1");
+            assert.strictEqual(T.x, 5);
+            assert.strictEqual(T.y, 7);
+            assert.strictEqual(T.z, 10);
+        });
+    });
 });
 
