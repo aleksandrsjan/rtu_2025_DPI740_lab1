@@ -330,5 +330,61 @@ describe('Test Triangle class', () => {
             assert.strictEqual(result, 0);
         });
     });
+
+    describe('Triangle getLongestEdge method', () => {
+        it('Should return correct Triangle longest edge value', () => {
+            const T = new Triangle(1,5,10);
+            const result = T.getLongestEdge();
+            assert.strictEqual(result, 10);
+        });
+
+        it('Should return correct Triangle longest edge value', () => {
+            const T = new Triangle(1,1,1);
+            const result = T.getLongestEdge();
+            assert.strictEqual(result, 1);
+        });
+
+        it('Should return correct Triangle longest edge value', () => {
+            const T = new Triangle(0,0,0);
+            const result = T.getLongestEdge();
+            assert.strictEqual(result, 0);
+        });
+
+        it('Should return correct Triangle longest edge value', () => {
+            const T = new Triangle(1000,50,10);
+            const result = T.getLongestEdge();
+            assert.strictEqual(result, 1000);
+        });
+
+        it('Should return correct Triangle longest edge value', () => {
+            const T = new Triangle(1,500,10);
+            const result = T.getLongestEdge();
+            assert.strictEqual(result, 500);
+        });
+
+        it('Should return correct Triangle longest edge value', () => {
+            const T = new Triangle(500,500,500);
+            const result = T.getLongestEdge();
+            assert.strictEqual(result, 500);
+        });
+
+        it('Should return correct Triangle longest edge value', () => {
+            const T = new Triangle(-10,-10,-10);
+            const result = T.getLongestEdge();
+            assert.strictEqual(result, 0);
+        });
+
+        it('Should return correct Triangle longest edge value', () => {
+            const T = new Triangle(NaN,NaN,NaN);
+            const result = T.getLongestEdge();
+            assert.strictEqual(result, 0);
+        });
+
+        it('Should return correct Triangle longest edge value', () => {
+            const T = new Triangle("1","5","10");
+            const result = T.getLongestEdge();
+            assert.strictEqual(result, 0);
+        });
+    });
 });
 
