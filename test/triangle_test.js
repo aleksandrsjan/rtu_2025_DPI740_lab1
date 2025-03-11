@@ -495,14 +495,50 @@ describe('Test Triangle class', () => {
             assert.strictEqual(result, true);
         });
 
+        it('Should return true if Triangle side lengths are equal', () => {
+            const T = new Triangle(1,1,1);
+            const result = T.isEquilateral();
+            assert.strictEqual(result, true);
+        });
+
+        it('Should return true if Triangle side lengths are equal', () => {
+            const T = new Triangle(1000,1000,1000);
+            const result = T.isEquilateral();
+            assert.strictEqual(result, true);
+        });
+
         it('Should return false if only two Triangle side lengths are equal', () =>{
             const T = new Triangle(10,10,5);
             const result = T.isEquilateral();
             assert.strictEqual(result, false)
         });
 
+        it('Should return false if only two Triangle side lengths are equal', () =>{
+            const T = new Triangle(5,10,10);
+            const result = T.isEquilateral();
+            assert.strictEqual(result, false)
+        });
+
+        it('Should return false if only two Triangle side lengths are equal', () =>{
+            const T = new Triangle(10,5,10);
+            const result = T.isEquilateral();
+            assert.strictEqual(result, false)
+        });
+
         it('Should return false if Triangle side lengths are different', () =>{
             const T = new Triangle(1,2,3);
+            const result = T.isEquilateral();
+            assert.strictEqual(result, false)
+        });
+
+        it('Should return false if Triangle side lengths are different', () =>{
+            const T = new Triangle(1000,2000,3000);
+            const result = T.isEquilateral();
+            assert.strictEqual(result, false)
+        });
+
+        it('Should return false if Triangle side lengths are different', () =>{
+            const T = new Triangle(10,20,30);
             const result = T.isEquilateral();
             assert.strictEqual(result, false)
         });
@@ -515,14 +551,50 @@ describe('Test Triangle class', () => {
             assert.strictEqual(result, false)
         });
 
+        it('Should return false if Triangle side lengths are equal', () => {
+            const T = new Triangle(1,1,1);
+            const result = T.isIsosceles();
+            assert.strictEqual(result, false)
+        });
+
+        it('Should return false if Triangle side lengths are equal', () => {
+            const T = new Triangle(1000,1000,1000);
+            const result = T.isIsosceles();
+            assert.strictEqual(result, false)
+        });
+
         it('Should return true if only two Triangle side lengths are equal', () => {
             const T = new Triangle(10,10,5);
             const result = T.isIsosceles();
             assert.strictEqual(result, true)
         });
 
+        it('Should return true if only two Triangle side lengths are equal', () => {
+            const T = new Triangle(5,10,10);
+            const result = T.isIsosceles();
+            assert.strictEqual(result, true)
+        });
+
+        it('Should return true if only two Triangle side lengths are equal', () => {
+            const T = new Triangle(10,5,10);
+            const result = T.isIsosceles();
+            assert.strictEqual(result, true)
+        });
+
         it('Should return false if Triangle side lengths are different', () => {
             const T = new Triangle(1,10,5);
+            const result = T.isIsosceles();
+            assert.strictEqual(result, false)
+        });
+
+        it('Should return false if Triangle side lengths are different', () => {
+            const T = new Triangle(10,100,50);
+            const result = T.isIsosceles();
+            assert.strictEqual(result, false)
+        });
+
+        it('Should return false if Triangle side lengths are different', () => {
+            const T = new Triangle(1000,10000,5000);
             const result = T.isIsosceles();
             assert.strictEqual(result, false)
         });
