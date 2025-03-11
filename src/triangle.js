@@ -72,7 +72,7 @@ class Triangle {
             return false;
         } else if (this.x === this.y && this.x !== this.z) {
             return true;
-        } else if (this.x === this.z && yhis.x !== this.y) {
+        } else if (this.x === this.z && this.x !== this.y) {
             return true;
         } else if ( this.y === this.z && this.y !== this.x) {
             return true;
