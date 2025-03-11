@@ -311,6 +311,24 @@ describe('Test Triangle class', () => {
             const result = T.getPerimeter();
             assert.strictEqual(result, 0);
         });
+
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle(-100,-100,-100);
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 0);
+        });
+
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle(NaN,NaN,NaN);
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 0);
+        });
+
+        it('Should return correct Triangle perimeter', () =>{
+            const T = new Triangle("100","100","100");
+            const result = T.getPerimeter();
+            assert.strictEqual(result, 0);
+        });
     });
 });
 
