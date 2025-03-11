@@ -2,6 +2,14 @@
   "name": "triangles",
   "version": "1.0.0",
   "description": "Tīmekļa risinājumu automatizēta testēšana un slodzes testēšana kursa laboratorijas darbs",
+  "homepage": "https://github.com/aleksandrsjan/rtu_2025_DPI740_lab1#readme",
+  "bugs": {
+    "url": "https://github.com/aleksandrsjan/rtu_2025_DPI740_lab1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksandrsjan/rtu_2025_DPI740_lab1.git"
+  },
   "license": "ISC",
   "author": "Aleksandrs Jančevskis",
   "type": "commonjs",
